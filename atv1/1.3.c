@@ -1,8 +1,29 @@
-//1.1.c
 
 #include <stdio.h>
+#include <locale.h>
 
 int mult (int base, int exp, int stack);
+
+//-----------------------------------------------------
+
+int main(){
+
+	setlocale (LC_ALL, "");
+	setlocale (LC_CTYPE, "pt_BR.UTF-8");
+
+    int x,n,s = 0, result;
+
+    printf("Digite a base e o expoente inteiros: ");
+    scanf("%d %d", &x, &n);
+
+    result = mult(x,n,s);
+
+    printf("Resultado: %d", result);
+
+    return 0;
+
+}
+
 
 int mult(int base, int exp, int stack){
 
@@ -26,7 +47,7 @@ int mult(int base, int exp, int stack){
 
         }
 
-    mult(base,exp,stack);
+    return mult(base,exp,stack);
 
     }else{
     
@@ -34,20 +55,3 @@ int mult(int base, int exp, int stack){
     
     }
 }
-
-int main(){
-
-    int x,n,s = 0, result;
-
-    printf("Digite a base e o expoente: ");
-    scanf("%d %d", &x, &n);
-
-    result = mult(x,n,s);
-
-    printf("resultado: %d", result);
-
-    return 0;
-
-}
-
-
